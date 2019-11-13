@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Дэлбээ брэнд</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7C;Roboto:100,500"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/fonts/decode-icons/css/decode-icons.min.css"><link rel="stylesheet" href="/assets/plugins/animations/animate.min.css"><link rel="stylesheet" href="/assets/css/custom.css"><link rel="stylesheet" href="/assets/css/pages-style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script><script>function showHelp() {
+        Swal.mixin({
+          confirmButtonText: 'Дараагийн алхам &rarr;',
+          progressSteps: ['1', '2', '3', '4']
+        }).queue([
+          {
+            title: '1. Бүтээгдэхүүн сонгох',
+            text: 'Та "Бүтээгдэхүүн" цэснээс өөрийн хүссэн бүтээгдэхүүнээ сонгоно',
+            imageUrl: '/assets/images/video1.gif',
+          imageWidth: 400,
+                imageHeight: 200,
+      },
+        {
+          title: '2. Сагсанд нэмэх',
+                  text: 'Та төрөл, багц болон тоо ширхэгээ оруулан сагсанд нэмэх товчийг дарна',
+                imageUrl: '/assets/images/video2.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+        {
+          title: '3. Захиалах',
+                  text: 'Та сагс руу орж өөрийн захиалсан бүтээгдэхүүнтэйгээ танилцан захиалах товчин дээр дарна',
+                imageUrl: '/assets/images/video3.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+        {
+          title: '4. Бүртгүүлэх',
+                  text: 'Та өөрийн захиалгын мэдээллээ оруулан бүртгүүлэх товчин дээр дархад таны захиалга хийгдэх болно',
+                imageUrl: '/assets/images/video4.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+      ]).then((result) => {
+          if (result.value) {
+            Swal({
+              title: 'Ингээд л боллоо',
+
+            })
+          }
+        })
+      }
+      function orderSuccess() {
+        Swal(
+                'Таны захиалга амжилттай хийгдлээ',
+                'Та өөрийн цахим хаягаа шалгана нэхэмжлэлтэй танилцана уу. Манай ажилтан тантай удахгүй холбогдох болно',
+                'success'
+        )
+      }
+      function offerSuccess() {
+        Swal(
+                'Үнийн санал амжилттай илгээгдлээ',
+                '',
+                'success'
+        )
+      }
+      function addedToCart() {
+        Swal(
+                'Сагсанд амжилттай нэмэгдлээ',
+                '',
+                'success'
+        )
+      }</script></head><body class="header-modern footer-light"><noscript>You need to enable JavaScript to run this app.</noscript><div id="main-container"><div id="root"></div></div><a id="scroll-up" class="waves"><i class="fa fa-angle-up"></i></a><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/assets/plugins/menu/hoverIntent.js"></script><script src="/assets/plugins/menu/superfish.js"></script><script src="/assets/plugins/isotope/imagesloaded.pkgd.min.js"></script><script src="/assets/plugins/isotope/isotope.pkgd.min.js"></script><script src="/assets/plugins/validate/jquery.validate.min.js"></script><script src="/assets/plugins/submit/jquery.form.min.js"></script><script src="/assets/plugins/animations/wow.min.js"></script><script src="/assets/js/custom.js"></script><script>!function(i){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,f=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(p,t)&&p[t]&&f.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(i[r]=o[r]);for(s&&s(e);f.length;)f.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},p={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return i[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=i,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=this.webpackJsonpdelbee=this.webpackJsonpdelbee||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/2.3582433f.chunk.js"></script><script src="/static/js/main.df2d47b5.chunk.js"></script></body></html>

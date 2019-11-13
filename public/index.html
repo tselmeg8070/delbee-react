@@ -24,11 +24,102 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Дэлбээ брэнд</title>
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7C;Roboto:100,500">
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- DECODE ICONS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/fonts/decode-icons/css/decode-icons.min.css">
+
+    <!-- ANIMATIONS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/plugins/animations/animate.min.css">
+
+<!--    {{&#45;&#45;<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.2.5/jquery.bootstrap-touchspin.min.css">&#45;&#45;}}-->
+
+    <!-- CUSTOM & PAGES STYLE -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/custom.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/pages-style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+    <script>
+      function showHelp() {
+        Swal.mixin({
+          confirmButtonText: 'Дараагийн алхам &rarr;',
+          progressSteps: ['1', '2', '3', '4']
+        }).queue([
+          {
+            title: '1. Бүтээгдэхүүн сонгох',
+            text: 'Та "Бүтээгдэхүүн" цэснээс өөрийн хүссэн бүтээгдэхүүнээ сонгоно',
+            imageUrl: '%PUBLIC_URL%/assets/images/video1.gif',
+          imageWidth: 400,
+                imageHeight: 200,
+      },
+        {
+          title: '2. Сагсанд нэмэх',
+                  text: 'Та төрөл, багц болон тоо ширхэгээ оруулан сагсанд нэмэх товчийг дарна',
+                imageUrl: '%PUBLIC_URL%/assets/images/video2.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+        {
+          title: '3. Захиалах',
+                  text: 'Та сагс руу орж өөрийн захиалсан бүтээгдэхүүнтэйгээ танилцан захиалах товчин дээр дарна',
+                imageUrl: '%PUBLIC_URL%/assets/images/video3.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+        {
+          title: '4. Бүртгүүлэх',
+                  text: 'Та өөрийн захиалгын мэдээллээ оруулан бүртгүүлэх товчин дээр дархад таны захиалга хийгдэх болно',
+                imageUrl: '%PUBLIC_URL%/assets/images/video4.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+        },
+      ]).then((result) => {
+          if (result.value) {
+            Swal({
+              title: 'Ингээд л боллоо',
+
+            })
+          }
+        })
+      }
+      function orderSuccess() {
+        Swal(
+                'Таны захиалга амжилттай хийгдлээ',
+                'Та өөрийн цахим хаягаа шалгана нэхэмжлэлтэй танилцана уу. Манай ажилтан тантай удахгүй холбогдох болно',
+                'success'
+        )
+      }
+      function offerSuccess() {
+        Swal(
+                'Үнийн санал амжилттай илгээгдлээ',
+                '',
+                'success'
+        )
+      }
+      function addedToCart() {
+        Swal(
+                'Сагсанд амжилттай нэмэгдлээ',
+                '',
+                'success'
+        )
+      }
+    </script>
   </head>
-  <body>
+  <body class="header-modern footer-light">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="main-container">
+      <div id="root"></div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -38,6 +129,43 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
+
     -->
+
+    <!-- SCROLL UP -->
+    <a id="scroll-up" class="waves"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- jQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- MENU -->
+    <script src="%PUBLIC_URL%/assets/plugins/menu/hoverIntent.js"></script>
+    <script src="%PUBLIC_URL%/assets/plugins/menu/superfish.js"></script>
+
+
+
+
+
+    <!-- ISOTOPE -->
+    <script src="%PUBLIC_URL%/assets/plugins/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/plugins/isotope/isotope.pkgd.min.js"></script>
+
+    <!-- CONTACT FORM VALIDATE & SUBMIT -->
+    <script src="%PUBLIC_URL%/assets/plugins/validate/jquery.validate.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/plugins/submit/jquery.form.min.js"></script>
+
+    <!-- YOUTUBE PLAYER -->
+
+
+    <!-- ANIMATIONS -->
+    <script src="%PUBLIC_URL%/assets/plugins/animations/wow.min.js"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
   </body>
 </html>
