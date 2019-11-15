@@ -1029,6 +1029,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
 
+"@editorjs/image@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@editorjs/image/-/image-2.3.3.tgz#5bd0e46ab038853948c5e5df9b049cce53f2d998"
+  integrity sha512-IYPCGFVRYyR37m9OeoX4I5SPlMPzHtEgjHzOTeZoU749CI2a7FYVBcMT2j5xoyfDtNSjWT9LAlvPJULv3CFxgg==
+
 "@firebase/analytics-types@0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@firebase/analytics-types/-/analytics-types-0.2.2.tgz#d442d0cda78dd5a43fe08441423d391b713987c8"

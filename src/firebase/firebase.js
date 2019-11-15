@@ -3,6 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/storage';
 import 'firebase/database';
+import {makeid} from "../utils/HelperFunctions";
 
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -22,6 +23,7 @@ class Firebase {
         this.storage = app.storage();
         this.realdb = app.database();
     }
+
     doCreateUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
     doSignInWithEmailAndPassword = (email, password) =>
@@ -63,13 +65,12 @@ class Firebase {
      * @param posts is array of posts
      * @return {Promise<void>}
      */
-    createPostInstance = posts => {
-        const postsObject = {};
-        for(var i=0;i<posts.length;i++) {
-            const post = posts[i];
-            postsObject[post.key] = post.value;
-        }
-        return this.db.collection("posts").doc("1").set(postsObject);
+    createProductInstance = (products, product) => {
+        const postsObject = {
+            ...products,
+            [makeid(8)]: product
+        };
+        return this.db.collection("products").doc("1").set(postsObject);
     };
 
     getProductsInstance = () => {
@@ -91,28 +92,6 @@ class Firebase {
         })
     };
 
-    createPostComment = (key, comment) => {
-        const data = {
-            comment: comment,
-            time: Date.now()
-        };
-        return this.realdb.ref('posts/'+key+'/comments').push().set(data);
-    };
 
-
-    getAllPostData = () => {
-        return this.realdb.ref('posts/').once('value')
-    };
-
-
-    incrementViews = (key) => {
-        const postRef =  this.realdb.ref('posts/'+key);
-        postRef.transaction((post) => {
-            if (post) {
-                post.views++;
-            }
-            return post;
-        });
-    }
 }
 export  default Firebase;

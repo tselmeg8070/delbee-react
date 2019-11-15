@@ -15,7 +15,8 @@ import Footer from './Footer';
 import ProductsPage from './Products';
 import CartPage from './Cart';
 import ProductPage from './Product';
-import AdminLogin from './Admin/Login'
+import AdminLogin from './Admin/Login';
+import AdminProductAdd from './Admin/ProductCreate';
 import {withAuthentication} from '../session'
 
 class App extends React.Component {
@@ -40,6 +41,8 @@ class App extends React.Component {
             } />
             <Route exact path={ROUTER.CART} component={CartPage}/>
             <Route exact path={ROUTER.LOGIN} component={AdminLogin}/>
+            <Route exact path={ROUTER.ADMIN_PRODUCT_ADD} component={AdminProductAdd}/>
+
             <Footer/>
         </Router>
     )

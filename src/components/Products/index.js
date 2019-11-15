@@ -1,7 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Item from  '../shared/Item';
 import {connect} from "react-redux";
+import {compose} from "recompose";
+import * as ROUTES from "../../constants/routes";
 
 class Product extends React.Component {
     constructor(props) {
@@ -15,6 +17,9 @@ class Product extends React.Component {
         this.setState({
             category
         })
+    };
+    handleAddProduct = () => {
+        this.props.history.push(ROUTES.ADMIN_PRODUCT_ADD);
     };
     render() {
         const products = this.props.products;
@@ -47,6 +52,12 @@ class Product extends React.Component {
                             </ul>
                     </div>
                 </div>
+                {this.props.authUser !== null &&
+                    <div className={'row'}>
+                        <button className={'btn btn-block'} onClick={this.handleAddProduct}>+ ШИНЭ БҮТЭЭГДЭХҮҮН НЭМЭХ</button>
+                    </div>
+                }
+
                 <div className='row'>
                     <div className={'col-md-12'}>
                         <div className="isotope cols-3 gutter">
@@ -64,4 +75,7 @@ const mapStateToProps = (state) => ({
     products: state.productState,
     authUser: state.sessionState.authUser
 });
-export default connect(mapStateToProps)(Product);
+export default compose(
+    connect(mapStateToProps),
+    withRouter
+    )(Product);
