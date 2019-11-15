@@ -61,14 +61,13 @@ class Firebase {
     };
 
     /**
-     * This method creates instances of posts
-     * @param posts is array of posts
+     * This method creates instances of products
+     * @param products is array of posts
      * @return {Promise<void>}
      */
-    createProductInstance = (products, product) => {
+    createProductInstance = products => {
         const postsObject = {
             ...products,
-            [makeid(8)]: product
         };
         return this.db.collection("products").doc("1").set(postsObject);
     };

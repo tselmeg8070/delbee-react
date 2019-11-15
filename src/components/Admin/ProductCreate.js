@@ -4,6 +4,9 @@ import {INITIAL_STATE} from "./initial";
 import {makeid} from '../../utils/HelperFunctions';
 import {connect} from "react-redux";
 import {compose} from 'recompose';
+import {addProducts} from "../../redux/actions/product";
+import {withRouter} from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 
 class ProductCreate extends React.Component {
 
@@ -52,9 +55,11 @@ class ProductCreate extends React.Component {
         this.setState({packs})
     };
     handleSubmit = () => {
-        console.log(this.state);
-        this.props.firebase.createProductInstance(this.props.productState, this.state).then(() => {
-
+        let state = this.props.productState;
+        state[makeid(5)] = this.state;
+        this.props.dispatchProducts(state);
+        this.props.firebase.createProductInstance(state).then(() => {
+            this.props.history.push(ROUTES.PRODUCTS);
         })
     };
     render() {
@@ -108,7 +113,13 @@ class ProductCreate extends React.Component {
 const mapStateToProps = (state) => ({
     productState: state.productState
 });
+const mapDispatchToProps = (dispatch) => ({
+    dispatchProducts: (data) => {
+        dispatch(addProducts(data))
+    },
+});
 export default compose(
     withFirebase,
-    connect(mapStateToProps)
+    connect(mapStateToProps, mapDispatchToProps),
+    withRouter
 )(ProductCreate);

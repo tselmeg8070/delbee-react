@@ -22,7 +22,7 @@ class Login extends React.Component {
         this.props.firebase
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
-                this.props.history.push(ROUTES.ADMIN_PRODUCTS);
+                this.props.history.push(ROUTES.PRODUCTS);
             })
             .catch(error => {
                 console.log(error);
